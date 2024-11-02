@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 @st.cache_data
 def load_default_data():
     return pd.read_csv(
-        'analytics_data.csv'
+       'analytics_data.csv'
     )
 
 # Function to load uploaded files (supports Excel and CSV)
@@ -256,11 +256,11 @@ elif view_option == "Customers & Visitors Analysis":
         if 'Current Customers' in filtered_data.columns:
             fig.add_trace(go.Scatter(x=filtered_data['Timestamp'], y=filtered_data['Current Customers'],
                                      mode='lines', name='Current Customers',
-                                     line=dict(color='#DC143C')))  # Crimson color for line chart
+                                     line=dict(color='#1E90FF', width=3)))  # Dodger Blue for line chart
         if 'Current Visitor' in filtered_data.columns:
             fig.add_trace(go.Scatter(x=filtered_data['Timestamp'], y=filtered_data['Current Visitor'],
                                      mode='lines', name='Current Visitors',
-                                     line=dict(color='#3CB371')))  # Medium Sea Green color for line chart
+                                     line=dict(color='#FF4500', width=3)))  # Orange Red for line chart
 
     fig.update_layout(
         title="Minute-Level Trends in Current Customers and Visitors",
