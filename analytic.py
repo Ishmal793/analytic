@@ -163,12 +163,12 @@ if view_option == "Overall":
     gauge_fig_total = go.Figure(go.Indicator(
         mode="gauge+number",
         value=total_checks,
-        title={'text': "Total Checks", 'font': {'size': 20, 'color': 'white'}},  # White font color
+        title={'text': "Total Checks", 'font': {'size': 20}},  # Font color removed
         gauge={
             'axis': {'range': [0, max(metrics.values(), default=0) * 1.1]},  # Set range based on max metric value
             'bar': {'color': gauge_colors[0]}  # Color for the total checks gauge
         },
-        number={'font': {'color': 'white', 'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold white font color
+        number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold font, color removed
     ))
     gauge_figures.append(gauge_fig_total)  # Append total checks gauge
 
@@ -176,12 +176,12 @@ if view_option == "Overall":
         fig = go.Figure(go.Indicator(
             mode="gauge+number",
             value=value,
-            title={'text': label, 'font': {'size': 20, 'color': 'white'}},  # White font color
+            title={'text': label, 'font': {'size': 20}},  # Font color removed
             gauge={
                 'axis': {'range': [0, max(metrics.values(), default=0) * 1.1]},
                 'bar': {'color': color}  # Use distinct color for each gauge
             },
-            number={'font': {'color': 'white', 'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold white font color
+            number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold font, color removed
         ))
         gauge_figures.append(fig)
 
@@ -223,9 +223,9 @@ if view_option == "Overall":
         template="plotly_dark",
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
-        title_font=dict(size=24, color='white'),  # White font color
-        xaxis_title_font=dict(size=18, color='white'),  # White font color
-        yaxis_title_font=dict(size=18, color='white')  # White font color
+        title_font=dict(size=24),  # Font color removed
+        xaxis_title_font=dict(size=18),  # Font color removed
+        yaxis_title_font=dict(size=18)  # Font color removed
     )
     st.plotly_chart(bar_fig)
 
@@ -243,9 +243,9 @@ if view_option == "Overall":
         template="plotly_dark",
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
-        title_font=dict(size=24, color='white'),  # White font color
-        xaxis_title_font=dict(size=18, color='white'),  # White font color
-        yaxis_title_font=dict(size=18, color='white')  # White font color
+        title_font=dict(size=24),  # Font color removed
+        xaxis_title_font=dict(size=18),  # Font color removed
+        yaxis_title_font=dict(size=18)  # Font color removed
     )
     st.plotly_chart(fig)
 # People & Customer Analysis
@@ -267,9 +267,9 @@ elif view_option == "Customers & Visitors Analysis":
         template="plotly_dark",
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
-        title_font=dict(size=24, color='white', weight='bold'),  # White font color and bold weight
-        xaxis_title_font=dict(size=18, color='white'),  # White font color
-        yaxis_title_font=dict(size=18, color='white')  # White font color
+        title_font=dict(size=24, weight='bold'),  # Bold weight, color removed
+        xaxis_title_font=dict(size=18),  # Font color removed
+        yaxis_title_font=dict(size=18)  # Font color removed
     )
     st.plotly_chart(fig)
 
@@ -303,16 +303,15 @@ elif view_option == "Customers & Visitors Analysis":
         template="plotly_dark",
         plot_bgcolor="rgba(0,0,0,0)",
         paper_bgcolor="rgba(0,0,0,0)",
-        title_font=dict(size=24, color='white', weight='bold'),  # White font color and bold weight
-        xaxis_title_font=dict(size=18, color='white'),  # White font color
-        yaxis_title_font=dict(size=18, color='white')  # White font color
+        title_font=dict(size=24, weight='bold'),  # Bold weight, color removed
+        xaxis_title_font=dict(size=18),  # Font color removed
+        yaxis_title_font=dict(size=18)  # Font color removed
     )
 
     # Customize x-axis for better readability with minute-level data
     fig.update_xaxes(tickangle=45, nticks=20, tickformat="%H:%M")
 
     st.plotly_chart(fig)
-
 # Shelf Analysis with Minute-Level Data
 elif view_option == "Shelf Analysis":
     st.subheader("Shelf Analysis (Minute-Level)")
@@ -335,9 +334,9 @@ elif view_option == "Shelf Analysis":
             paper_bgcolor="rgba(0,0,0,0)",  # Transparent paper background
             xaxis=dict(showgrid=False),
             yaxis=dict(showgrid=False),
-            title_font=dict(size=24, color='white', weight='bold'),
-            xaxis_title_font=dict(size=18, color='white'),
-            yaxis_title_font=dict(size=18, color='white')
+            title_font=dict(size=24, weight='bold'),  # Bold weight, color removed
+            xaxis_title_font=dict(size=18),  # Font color removed
+            yaxis_title_font=dict(size=18)  # Font color removed
         )
         st.plotly_chart(fig1)
 
@@ -360,9 +359,9 @@ elif view_option == "Shelf Analysis":
             template="plotly_dark",
             plot_bgcolor="rgba(0,0,0,0)",  # Transparent background for the chart area
             paper_bgcolor="rgba(0,0,0,0)",  # Transparent paper background
-            title_font=dict(size=24, color='white', weight='bold'),
-            xaxis_title_font=dict(size=18, color='white'),
-            yaxis_title_font=dict(size=18, color='white'),
+            title_font=dict(size=24, weight='bold'),  # Bold weight, color removed
+            xaxis_title_font=dict(size=18),  # Font color removed
+            yaxis_title_font=dict(size=18),  # Font color removed
             xaxis=dict(tickformat="%H:%M")
         )
         st.plotly_chart(fig2)
@@ -384,8 +383,8 @@ elif view_option == "Shelf Analysis":
             template="plotly_dark",
             plot_bgcolor="rgba(0,0,0,0)",  # Transparent background for the chart area
             paper_bgcolor="rgba(0,0,0,0)",  # Transparent paper background
-            title_font=dict(size=24, color='white', weight='bold'),
-            xaxis_title_font=dict(size=18, color='white'),
-            yaxis_title_font=dict(size=18, color='white')
+            title_font=dict(size=24, weight='bold'),  # Bold weight, color removed
+            xaxis_title_font=dict(size=18),  # Font color removed
+            yaxis_title_font=dict(size=18)  # Font color removed
         )
         st.plotly_chart(fig3)
