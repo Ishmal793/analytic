@@ -136,7 +136,7 @@ st.markdown(
     f'<span style="color: grey; font-size: 12px; text-decoration: underline;">{tooltip_message}</span>',
     unsafe_allow_html=True
 )
-# Overall Summary Stats
+
 if view_option == "Overall":
 
     st.subheader("Overall Summary")
@@ -168,7 +168,7 @@ if view_option == "Overall":
             'axis': {'range': [0, max(metrics.values(), default=0) * 1.1]},  # Set range based on max metric value
             'bar': {'color': gauge_colors[0]}  # Color for the total checks gauge
         },
-        number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold font, color removed
+        number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold', 'color': 'grey'}}  # Bold font, grey color
     ))
     gauge_figures.append(gauge_fig_total)  # Append total checks gauge
 
@@ -181,7 +181,7 @@ if view_option == "Overall":
                 'axis': {'range': [0, max(metrics.values(), default=0) * 1.1]},
                 'bar': {'color': color}  # Use distinct color for each gauge
             },
-            number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold'}}  # Bold font, color removed
+            number={'font': {'size': 18, 'family': 'Arial', 'weight': 'bold', 'color': 'grey'}}  # Bold font, grey color
         ))
         gauge_figures.append(fig)
 
